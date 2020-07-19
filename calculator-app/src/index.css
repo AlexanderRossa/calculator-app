@@ -1,13 +1,230 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#box {
+    position: absolute;
+    z-index: 10;
+    margin-left: 4em;
+    margin-top: 4em;
+    text-align: center;
+    max-width: 40%;
+    width: 40%;
+    background-color: #FF8066;
+    border: 3px solid black;
+    border-radius: 5%;
+}
+
+.keyboard {
+    margin: 1em auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 5em 5em 5em 5em 5em;
+    grid-template-areas: "clear clear multiply divide" "nine eight seven subtract" "six five four add" "three two one add" "zero decimal equals equals";
+    grid-gap: 0.5em;
+    width: 60%;
+    height: auto;
+}
+
+button {
+    border: 1.5px solid black;
+    cursor: pointer;
+    font-size: 2em;
+    border-radius: 10%;
+}
+
+.screen {
+    background-color: white;
+    min-height: 4em;
+    height: auto;
+    width: 50%;
+    margin: 0 auto 0 auto;
+    border: 3px solid black;
+    text-align: right !important;
+    padding: 0 0.5em 0 0;
+    overflow: auto;
+}
+
+#currentValue {
+    margin: 0.2em;
+    font-size: 2em;
+}
+
+#display {
+    font-size: 1.7em;
+    color: #005B44;
+    margin: 0.2em;
+}
+
+#clear {
+    color: red;
+    grid-area: clear;
+}
+
+#multiply {
+    grid-area: multiply;
+}
+
+#divide {
+    grid-area: divide;
+}
+
+#nine {
+    grid-area: nine;
+}
+
+#eight {
+    grid-area: eight;
+}
+
+#seven {
+    grid-area: seven;
+}
+
+#subtract {
+    grid-area: subtract;
+}
+
+#six {
+    grid-area: six;
+}
+
+#five {
+    grid-area: five;
+}
+
+#four {
+    grid-area: four;
+}
+
+#add {
+    grid-area: add;
+}
+
+#three {
+    grid-area: three;
+}
+
+#two {
+    grid-area: two;
+}
+
+#one {
+    grid-area: one;
+}
+
+#zero {
+    grid-area: zero;
+}
+
+#decimal {
+    grid-area: decimal;
+}
+
+#equals {
+    grid-area: equals;
+}
+
+p {
+    padding: 0em;
+    margin: 0em;
+}
+
+h2 {
+    padding: 0em;
+    margin 0em;
+}
+
+@media screen and (max-width: 900px) {
+    #box {
+        width: 75%;
+        height: auto;
+        max-width: 95%;
+    }
+    ;
+    .screen,
+    .keyboard {
+        width: 80%
+    }
+    ;
+    svg {
+        margin-top: 500px;
+    }
+}
+
+
+/*#background{
+  background-color: #6497b1;
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  height:auto;
+}
+svg {
+  margin-top: 35em;
+  width: 100%;
+  height: 500px;
+  float: right;
+}
+#path1{
+  stroke: #005b;
+  stroke-width: 10px;
+  stroke-linecap: round;
+ fill:#b3cdee;
+  margin-bottom: 0em;
+}
+
+#path2{
+   stroke: #005b96;
+  stroke-width: 8px;
+  stroke-linecap: round;
+ fill: #6497be;
+}
+#path3{
+  stroke: #b3cde0;
+  stroke-width: 10px;
+  stroke-linecap: round;
+  fill: #6497bf;
+}
+*/
+
+svg {
+    margin-top: 450px;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+.risingWaves>use {
+    animation: move-forever 30s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.risingWaves>use:nth-child(1) {
+    animation-delay: -4s;
+    animation-duration: 10s;
+}
+
+.risingWaves>use:nth-child(2) {
+    animation-delay: -2s;
+    animation-duration: 10s;
+}
+
+.risingWaves>use:nth-child(3) {
+    animation-delay: -5s;
+    animation-duration: 22s;
+}
+
+.risingWaves>use:nth-child(4) {
+    animation-delay: -14s;
+    animation-duration: 25s;
 }
