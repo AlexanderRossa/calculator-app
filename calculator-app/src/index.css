@@ -136,7 +136,7 @@ p {
 
 h2 {
     padding: 0em;
-    margin 0em;
+    margin: 0em;
 }
 
 @media screen and (max-width: 900px) {
